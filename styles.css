@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: cornflowerblue;
+}
+
+#timer {
+    color: white;
+    font-family: cursive;
+    font-size: 2rem;
+}
