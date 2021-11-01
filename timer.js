@@ -1,4 +1,5 @@
-const finalDateTime = new Date("Nov 19, 2021").getTime();
+const finalDateTime = new Date('Nov 19, 2021').getTime();
+let interval;
 
 function timer() {
 
@@ -11,14 +12,17 @@ function timer() {
     let minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-    document.getElementById(id).innerHTML = days + "d " + hours + "h "
-        + minutes + "m " + seconds + "s ";
-
     if (timeRemaining < 0) {
-        clearInterval(interval);
-        document.getElementById(id).innerHTML = "EXPIRED";
+        if (interval) {
+            clearInterval(interval);
+        }
+        document.getElementById(id).innerHTML = '<a href="https://open.spotify.com/artist/4dpARuHxo51G3z768sgnrY">GO LISTEN TO IT!!</a>';
+        return;
     }
+
+    document.getElementById(id).innerHTML = days + 'd ' + hours + 'h '
+    + minutes + 'm ' + seconds + 's ';
 }
 
 timer();
-let x = setInterval(timer, 1000);
+interval = setInterval(timer, 1000);
