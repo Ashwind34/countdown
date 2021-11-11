@@ -1,9 +1,16 @@
 const finalDateTime = new Date('Nov 19, 2021').getTime();
 let interval;
 
+const card = document.getElementById("card");
+
+function flipCard() {
+    card.classList.toggle("flipCard");
+}
+
 function timer() {
 
-    const id = 'timer';
+    const timerId = 'timer';
+    const headerId = 'header'
     let now = new Date().getTime();
     let timeRemaining = finalDateTime - now;
 
@@ -16,12 +23,12 @@ function timer() {
         if (interval) {
             clearInterval(interval);
         }
-        document.getElementById(id).innerHTML = '<a href="https://open.spotify.com/artist/4dpARuHxo51G3z768sgnrY">GO LISTEN TO IT!!</a>';
+        document.getElementById(timerId).innerHTML = "Click the Album Cover!";
+        document.getElementById(headerId).innerHTML = "IT'S HERE!";
+        card.addEventListener("click", flipCard)
         return;
     }
-
-    document.getElementById(id).innerHTML = days + 'd ' + hours + 'h '
-    + minutes + 'm ' + seconds + 's ';
+    document.getElementById(timerId).innerHTML = days + ' days ' + hours + ':' + minutes + ':' + seconds;
 }
 
 timer();
