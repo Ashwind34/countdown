@@ -12,18 +12,33 @@ body {
 }
 
 #card {
+    width: 494px;
+    height: 494px;
+    position: relative;
     transform-style: preserve-3d;
     transition: all 0.8s ease;
+    display: flex;
+    justify-content: center;
 }
 
 .front,
 .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .back {
-    text-align: center;
+    font-size: 1.75rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     transform: rotateY(180deg);
+    border: 5px ridge darkcyan;
 }
 
 .flipCard {
@@ -54,15 +69,15 @@ body {
 }
 
 @media (max-width: 480px) {
-    .main-img {
+    .main-img,
+    #timer,
+    #card {
         max-width: 85vw;
+        max-height: 85vw;
     }
 
     :root {
         font-size: 12px;
     }
 
-    #timer {
-        max-width: 85vw;
-    }
 }
