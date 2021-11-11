@@ -1,4 +1,5 @@
-const finalDateTime = new Date('Nov 19, 2021').getTime();
+// const finalDateTime = new Date('Nov 19, 2021').getTime();
+const finalDateTime = new Date('Sep 19, 2021').getTime();
 let interval;
 
 const card = document.getElementById("card");
