@@ -1,5 +1,5 @@
-// const finalDateTime = new Date('Nov 19, 2021').getTime();
-const finalDateTime = new Date('Sep 19, 2021').getTime();
+const finalDateTime = new Date('19 November 2021 00:00 UTC').getTime();
+
 let interval;
 
 const card = document.getElementById("card");
@@ -19,6 +19,10 @@ function timer() {
     let hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     let minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+    hours = hours >= 10 ? hours : "0" + hours;
+    minutes = minutes >= 10 ? minutes : "0" + minutes;
+    seconds = seconds >= 10 ? seconds : "0" + seconds;
 
     if (timeRemaining < 0) {
         if (interval) {
