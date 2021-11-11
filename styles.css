@@ -5,18 +5,64 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     height: 100vh;
     background-color: cornflowerblue;
 }
 
+.card {
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+}
+
+.front,
+.back {
+    backface-visibility: hidden;
+}
+
+.back {
+    text-align: center;
+    transform: rotateY(180deg);
+}
+
+.flipCard {
+    transform: rotateY(180deg);
+}
+
 #timer {
     color: white;
-    font-family: cursive;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2rem;
+    padding: 0.5rem;
+    border: 5px ridge darkcyan;
+    border-radius: 10px;
+    text-align: center;
+    width: 28rem;
+}
+
+.header {
+    font-size: 3rem;
+    font-style: italic;
+    color: white;
+    margin-bottom: 0.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif
 }
 
 .main-img {
     max-width: 31rem;
+}
+
+@media (max-width: 480px) {
+    .main-img {
+        max-width: 85vw;
+    }
+
+    :root {
+        font-size: 12px;
+    }
+
+    #timer {
+        max-width: 85vw;
+    }
 }
